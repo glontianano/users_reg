@@ -28,10 +28,33 @@ function selectUsers()
 
 
 }
+function oneUserDb($id){
+    $con = connection();
+    $select = sprintf("select * from users WHERE id =%d",$id);
+    $query = mysqli_query($con, $select);
+    $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+
+    mysqli_close($con);
+    return $results;
+
+}
 
 function deleteUserDB($id){
     $con = connection();
-    $del = sprintf("DELETE from users where id =%d", $id);
-    return $del;
+    $del = sprintf("DELETE FROM users WHERE id = %d", $id);
+    $query = mysqli_query($con, $del);
+    mysqli_close($con);
+    return $query;
+}
+
+function editUserDB($id){
+
+    $con = connection();
+    $edit = sprintf("UPDATE users SET WHERE id = %d ",$id);
+    $query = mysqli_query($con,$edit);
+    $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
+    mysqli_close($con);
+    print_r( $results);
 }
 

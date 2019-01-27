@@ -26,13 +26,31 @@ function showAllUsers(){
 
 
 }
+function oneUser($id){
+    require_once __ROOT__."/model/dbLogic.php";
 
-function deleteUser(){
+    $query = oneUserDb($id);
+
+
+}
+
+function deleteUser($id){
     require_once __ROOT__."/model/dbFunctions.php";
-    echo 'sd';
-    print_r($_SERVER['PATH_INFO']);
-    //jajaj
 
+    $del = deleteUserDB($id);
+    echo $del ? 'success' : 'error';
+}
+
+function editUser($id)
+{
+
+    require_once __ROOT__ . "/model/dbFunctions.php";
+    $user = oneUserDb($id);
+    render('edit', $user);
+}
+
+function saveChanges(){
+    
 }
 
 

@@ -2,7 +2,7 @@ function removeUser(userID) {
     if (confirm("Remove this user?")) {
         $.ajax({
             url: '/deleteUser/' + userID,
-            // type: "DELETE",
+            type: "DELETE",
             success: function (response) {
                 console.log(response);
                 if (response == 'success')

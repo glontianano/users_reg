@@ -53,7 +53,7 @@
 
 
     <td>
-        <a href="<?php echo 'edit?id='.$user['id'] ?>" class="editBtn">Edit</a>
+        <a href="/editUser/<?php echo $user['id']; ?>" class="editBtn">Edit</a>
     </td>
     <td>
         <button  onclick='removeUser("<?php echo $user['id']; ?>")'> Delete </button>
