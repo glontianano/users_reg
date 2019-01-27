@@ -8,7 +8,7 @@
 
 <?php foreach ($variables as $userData) : ?>
 
-<form action='' method="post" enctype="multipart/form-data">
+<form action='/changes/<?php echo $userData['id']?>' method="post" enctype="multipart/form-data">
     Username
     <br>
     <input type="text" name="username" value ="<?php echo $userData['user_name']; ?>">
@@ -42,6 +42,6 @@
 <?php endforeach; ?>
 
 
-<?php //print_r($variables); ?>
+
 </body>
 </html>

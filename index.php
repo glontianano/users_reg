@@ -10,3 +10,4 @@ router('/users',['controller.php', 'showAllUsers']);
 router('/deleteUser/{id}',['controller.php','deleteUser']);
 router('/editUser/{id}',['controller.php','editUser']);
 router('/user/{id}',['controller.php','oneUser']);
+router('/changes/{id}',['controller.php','saveForm']);

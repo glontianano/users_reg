@@ -49,9 +49,31 @@ function editUser($id)
     render('edit', $user);
 }
 
-function saveChanges(){
-    
+function saveForm($id){
+
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $imageName = move_uploaded_file($_FILES['image']['tmp_name'], __ROOT__."/upploaded/{$_FILES['image']['name']}");
+
+    require_once   __ROOT__."/model/dbFunctions.php";
+    saveFormDB([
+        'user_name' =>$username,
+        'password' => $password,
+        'first_name' => $name,
+        'last_name' => $surname,
+        'age' => $age,
+        'gender' => $gender,
+        'image' => $_FILES['image']['name']
+    ],$id);
+
 }
+
+
 
 
 
