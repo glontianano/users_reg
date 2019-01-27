@@ -31,6 +31,7 @@ function deleteUser(){
     require_once __ROOT__."/model/dbFunctions.php";
     echo 'sd';
     print_r($_SERVER['PATH_INFO']);
+    //jajaj
 
 }
 
